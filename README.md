@@ -1,10 +1,10 @@
 # 📝 Lista de Tarefas em Swift (Terminal)
 
-## Interface
+## 🖥 Interface
 
 ![fotoPreview](fotoPreview.png)
 
-## Resumo
+## 📃 Resumo
 
 - Este é um projeto simples de **lista de tarefas** (to-do list) feito em **Swift**, que roda diretamente no terminal. O objetivo é praticar estruturas básicas da linguagem como listas, funções, optionals, controle de fluxo e entrada de dados.
 
