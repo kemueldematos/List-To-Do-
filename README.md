@@ -1,6 +1,6 @@
-# 📝 Lista de Tarefas em Swift (Terminal)
+# 📝 Lista de Tarefas em Swift 
 
-## 🖥 Interface
+## 🖥 Interface (Terminal)
 
 ![fotoPreview](fotoPreview.png)
 
