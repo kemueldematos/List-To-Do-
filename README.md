@@ -1,38 +1,37 @@
-# 📝 Lista de Tarefas em Swift 
+# 📝 To-Do List in Swift
 
 ## 🖥 Interface (Terminal)
 
 ![fotoPreview](fotoPreview.png)
 
-## 📃 Resumo
+## 📃 Summary
+This is a simple to-do list project made in Swift, which runs directly in the terminal. The goal is to practice basic language structures such as lists, functions, optionals, flow control, and data input.
 
-- Este é um projeto simples de **lista de tarefas** (to-do list) feito em **Swift**, que roda diretamente no terminal. O objetivo é praticar estruturas básicas da linguagem como listas, funções, optionals, controle de fluxo e entrada de dados.
+## 📌 Features
 
-## 📌 Funcionalidades
+- 📋 List tasks
+- ➕ Add new tasks
+- ❌ Remove tasks by index
+- ✏️ Edit existing tasks
+- 🔃 Change the priority (position) of tasks
+- 🚪 Exit the program
 
-- 📋 Listar tarefas
-- ➕ Adicionar novas tarefas
-- ❌ Remover tarefas por índice
-- ✏️ Editar tarefas existentes
-- 🔃 Mudar a prioridade (posição) das tarefas
-- 🚪 Encerrar o programa
+## 🧠 Logic
 
-## 🧠 Lógica
+- The program works with a "while true" loop that displays a menu of options to the user and responds according to the entered input. Tasks are stored in an array of strings called "ListadeTarefas".
 
-- O programa funciona com um laço "while true" que exibe um menu de opções para o usuário e responde conforme a entrada digitada. As tarefas são armazenadas em um array de strings chamado "ListadeTarefas"
+## 📂 Code Organization
 
-## 📂 Organização do Código
+- Functions such as adicionarTarefas, removerTarefa, editarTarefa, etc., manipulate a copy of the array and return the updated version
+- The main list is kept in the global variable listadeTarefas
+- Operations are performed with interactive input via readLine()
 
-- Funções como adicionarTarefas, removerTarefa, editarTarefa, etc., manipulam uma cópia do array e retornam a versão atualizada
-- A lista principal é mantida na variável global listadeTarefas
-- As operações são feitas com entrada interativa via readLine()
+## 🚀 Possible Improvements
 
-## 🚀 Possíveis melhorias
+- Save tasks to a file (data persistence)
+- Validate invalid indexes before removing or editing
+- Create a graphical interface (using SwiftUI, for example)
 
-- Salvar as tarefas em arquivo (persistência de dados)
-- Validar índices inválidos antes de remover ou editar
-- Criar interface gráfica (usando SwiftUI, por exemplo)
-
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 - Kemuel Áquila de Matos
