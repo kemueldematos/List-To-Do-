@@ -1,121 +1,117 @@
 import Foundation
 
-func exibirTarefas(){
-    print(listadeTarefas)
+func displayTasks() {
+    for task in taskList {
+        print(task)
+    }
 }
 
-func adicionarTarefas(tarefa: String, listadeP: [String]) -> [String]{
-    var listaInterna = listadeP
-    listaInterna.append(tarefa)
-    return listaInterna
+func addTask(task: String, taskListP: [String]) -> [String] {
+    var internalList = taskListP
+    internalList.append(task)
+    return internalList
 }
 
-func removerTarefa(tarefa: Int, listadeP: [String]) -> [String]{
-    var listaInterna = listadeP
-    listaInterna.remove(at: tarefa)
-    return listaInterna
+func removeTask(task: Int, taskListP: [String]) -> [String] {
+    var internalList = taskListP
+    internalList.remove(at: task)
+    return internalList
 }
 
-func editarTarefa(tarefa: Int, tarefa2: String, listadeP: [String]) -> [String]{
-    var listaInterna = listadeP
-    listaInterna.remove(at: tarefa)
-    listaInterna.insert(tarefa2, at: tarefa)
-    return listaInterna
+func editTask(task: Int, task2: String, taskListP: [String]) -> [String] {
+    var internalList = taskListP
+    internalList.remove(at: task)
+    internalList.insert(task2, at: task)
+    return internalList
 }
 
-func mudarPrioridade(tarefa: Int, tarefa2: Int, listadeP: [String]) -> [String]{
-    var listaInterna = listadeP
-    listaInterna.swapAt(tarefa, tarefa2)
-    return listaInterna
+func changePriority(task: Int, task2: Int, taskListP: [String]) -> [String] {
+    var internalList = taskListP
+    internalList.swapAt(task, task2)
+    return internalList
 }
 
-func encerrarPrograma(){
+func exitProgram() {
     exit(0)
-    
 }
 
-var listadeTarefas: [String] = [] 
+var taskList: [String] = []
 
 while true {
-    
-    print("""
-    === LISTA DE TAREFAS ===
 
-    OPÇÕES:
-    
-    1.Listar Tarefas
-    2.Adicionar Tarefa
-    3.Remover Tarefa
-    4.Edite uma Tarefa
-    5.Mudar prioridade da Tarefa
-    6.Sair
-    
+    print("""
+    === TO DO LIST ===
+
+    OPTIONS:
+
+    1. List Tasks
+    2. Add Task
+    3. Remove Task
+    4. Edit a Task
+    5. Change Task Priority
+    6. Exit
+
     """)
-    
-    guard let entrada = readLine(), let entrada = Int(entrada) else {
-        print("O tipo de valor Inserido esta Incorreto!")
+
+    guard let input = readLine(), let input = Int(input) else {
+        print("The type of the entered value is incorrect!")
         continue
     }
 
-    switch entrada{
+    switch input {
         case 1:
-            exibirTarefas()
-        
-            
+            displayTasks()
+
         case 2:
-            print("Insira sua Tarefa:")
-            guard let valor = readLine() else{
+            print("Enter your task:")
+            guard let value = readLine() else {
                 exit(1)
             }
-            
-            listadeTarefas = adicionarTarefas(tarefa: valor, listadeP: listadeTarefas) 
+
+            taskList = addTask(task: value, taskListP: taskList)
 
         case 3:
-            print("Selecione a tarefa que você quer remover (índice):")
-            guard let valor = readLine(), let valor = Int(valor) else{
+            print("Select the task you want to remove (index):")
+            guard let value = readLine(), let value = Int(value) else {
                 exit(1)
             }
-            
-            listadeTarefas = removerTarefa(tarefa: valor, listadeP: listadeTarefas)
-            
+
+            taskList = removeTask(task: value, taskListP: taskList)
+
         case 4:
-            print("Me diga o índice da tarefa a ser editada:")
-            guard let valor = readLine(), let valor = Int(valor) else{
+            print("Tell me the index of the task to be edited:")
+            guard let value = readLine(), let value = Int(value) else {
                 exit(1)
             }
-            
-            print("Insira a nova tarefa:")
-            guard let valor2 = readLine() else{
+
+            print("Enter the new task:")
+            guard let value2 = readLine() else {
                 exit(1)
             }
-            
-            listadeTarefas = editarTarefa(tarefa: valor, tarefa2:valor2, listadeP: listadeTarefas)
-        
+
+            taskList = editTask(task: value, task2: value2, taskListP: taskList)
+
         case 5:
-            print("Selecione o índice da a opção que você quer mover:")
-            guard let valor = readLine(), let valor = Int(valor) else{
+            print("Select the index of the option you want to move:")
+            guard let value = readLine(), let value = Int(value) else {
                 exit(1)
             }
-            
-            print("Selecione o índice para onde ela vai:")
-            guard let valor2 = readLine(), let valor2 = Int(valor2) else{
+
+            print("Select the index where it will go:")
+            guard let value2 = readLine(), let value2 = Int(value2) else {
                 exit(1)
             }
-            
-            listadeTarefas = mudarPrioridade(tarefa: valor, tarefa2: valor2, listadeP: listadeTarefas)
-       
-       
+
+            taskList = changePriority(task: value, task2: value2, taskListP: taskList)
+
         case 6:
             print("""
-            Programa Encerrado!
-            
-            """)    
-            encerrarPrograma()
-            
-        
+            Program Ended!
+
+            """)
+            exitProgram()
+
         default:
             continue
     }
 }
-
-
